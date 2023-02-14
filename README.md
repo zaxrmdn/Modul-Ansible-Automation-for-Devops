@@ -1,2 +1,2 @@
 # Modul-Ansible-Automation-for-Devops
-Hands On Lab Module Ansible autormation for 
+This code was built for Lab Module Ansible for Devops, so you have to buy it first, Because this repository not include the explain what code is use.
