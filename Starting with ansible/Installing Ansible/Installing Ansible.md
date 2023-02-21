@@ -10,6 +10,7 @@ $ apt-get install -y ansible
 ----
 ### Installing on centos
 ```
+$ yum -y install epel-release
 $ yum -y install ansible
 ```
 ----
@@ -18,7 +19,6 @@ $ yum -y install ansible
 ```
 $ pip install ansible
 ```
-----
 ----
 ### Check version
 ```
