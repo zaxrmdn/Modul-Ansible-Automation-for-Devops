@@ -40,14 +40,14 @@ ansible [core 2.12.10]
 ```
 ---
 ---
-## Issues
+## `#0969DA Issues
 ### if you encounter problems during the installation process you might see the following
 ### Issue on ubuntu cannot install ansible lock prosses 
 ```
 $ rm -r /var/lib/dpkg/lock-frontend
 $ rm -r /var/lib/dpkg/lock
 $ rm -r /var/cache/apt/archives/
-
+$ apt update
 ```
 ---
 ### You can contact me if there are other issues during the lab process
