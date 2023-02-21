@@ -21,7 +21,6 @@ $ yum install -y ansible
 pip install ansible
 ```
 ---
----
 ## Check version ansible
 ```
 $ ansible --version
@@ -49,7 +48,6 @@ $ rm -r /var/lib/dpkg/lock
 $ rm -r /var/cache/apt/archives/
 $ apt update
 ```
----
-### You can contact me if there are other issues during the lab process
----
+
+> You can contact me if there are other issues during the lab process
 
