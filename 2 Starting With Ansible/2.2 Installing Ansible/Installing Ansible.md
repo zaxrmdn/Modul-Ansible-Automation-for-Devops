@@ -40,7 +40,7 @@ ansible [core 2.12.10]
 ```
 ---
 ---
-## `0969DA' Issues
+## Issues
 ### if you encounter problems during the installation process you might see the following
 ### Issue on ubuntu cannot install ansible lock prosses 
 ```
