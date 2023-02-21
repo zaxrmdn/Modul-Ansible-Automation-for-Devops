@@ -7,7 +7,8 @@ $ vim /etc/ansible/hosts
 ```
 ---
 ### Define the host machine that we will control
-> lihat file konfigurasi hosts disini
+> The files configuration like this
+> [This](2.3\ Configuring\ basic\ inventory/hosts)
 ---
 ### Melihat konfigurasi yang tadi sebelumnya pernah dibuat
 ```
