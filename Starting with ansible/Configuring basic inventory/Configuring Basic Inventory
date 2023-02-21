@@ -1,6 +1,0 @@
-#Configuring basic inventory
-# Edit file /etc/ansible/hosts
-$ vim /etc/ansible/hosts
-
-# Check file hosts
-$ head /etc/ansible/hosts
