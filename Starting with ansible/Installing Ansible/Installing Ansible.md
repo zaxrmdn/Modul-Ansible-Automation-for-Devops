@@ -1,10 +1,8 @@
 # Installing Ansible
 
----
+___
 
-
-
----
+___
 
 ## Installing on ubuntu
 $ apt-add-repository -y ppa:ansible/ansible
