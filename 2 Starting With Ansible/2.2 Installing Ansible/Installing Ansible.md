@@ -1,10 +1,5 @@
 # Installing Ansible
 ---
-```
-
-
-
-```
 ---
 ### Installing on Debian/Ubuntu
 ```
@@ -40,12 +35,8 @@ ansible [core 2.12.10]
   jinja version = 2.10.1
   libyaml = True
 ```
-----
-
-
-
-
-----
+---
+---
 ### Issues
 > if you encounter problems during the installation process you might see the following
 > Issue on ubuntu cannot install ansible lock prosses 
