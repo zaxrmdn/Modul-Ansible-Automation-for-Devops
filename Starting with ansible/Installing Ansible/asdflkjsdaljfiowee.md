@@ -1,28 +1,28 @@
 # Installing Ansible
 ----
-
+	
 ----
 ### Installing on ubuntu
 $ apt-add-repository -y ppa:ansible/ansible
 $ apt-get update
 $ apt-get install -y ansible
 ----
-
+	
 ----
 ### Installing on centos
 $ yum -y install ansible
 ----
-
+	
 ----
 ### Installing on pip
 $ pip install ansible
 ----
-
+	
 ----
 ### Check version
 $ ansible --version
 ----
-
+	
 ----
 ```
 ansible [core 2.12.10]
