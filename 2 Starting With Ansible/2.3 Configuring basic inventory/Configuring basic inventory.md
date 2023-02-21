@@ -6,10 +6,8 @@
 $ vim /etc/ansible/hosts
 ```
 ---
----
 ### Define the host machine that we will control
 > lihat file konfigurasi hosts disini
----
 ---
 ### Melihat konfigurasi yang tadi sebelumnya pernah dibuat
 ```
