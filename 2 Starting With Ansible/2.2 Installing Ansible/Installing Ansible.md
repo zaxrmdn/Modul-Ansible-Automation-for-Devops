@@ -23,6 +23,8 @@ pip install ansible
 ---
 ## Check version ansible
 ```
+`#0969DA`
+
 $ ansible --version
 ```
 ---
