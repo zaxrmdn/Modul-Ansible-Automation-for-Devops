@@ -1,7 +1,7 @@
-#Installing Ansible
+# Installing Ansible
 ---
 ---
-##Installing on Debian/Ubuntu
+## Installing on Debian/Ubuntu
 ```
 $ apt-add-repository -y ppa:ansible/ansible
 $ apt update
@@ -27,7 +27,29 @@ pip install ansible
 $ ansible --version
 ```
 ---
+```
+ansible [core 2.12.10]
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible
+  python version = 3.8.10 (default, Nov 14 2022, 12:59:47) [GCC 9.4.0]
+  jinja version = 2.10.1
+  libyaml = True
+```
+---
+---
+## Issues
+### if you encounter problems during the installation process you might see the following
+### Issue on ubuntu cannot install ansible lock prosses 
+```
+$ rm -r /var/lib/dpkg/lock-frontend
+$ rm -r /var/lib/dpkg/lock
+$ rm -r /var/cache/apt/archives/
 
-
-##
+```
+---
+### You can contact me if there are other issues during the lab process
+---
 
