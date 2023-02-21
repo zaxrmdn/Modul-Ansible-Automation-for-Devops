@@ -7,9 +7,7 @@ $ vim /etc/ansible/hosts
 ```
 ---
 ### Define the host machine that we will control 
-> The inventory configuration file is under this link
----
-[hosts](./hosts)
+> The inventory configuration file is in this link [hosts](./hosts)
 ---
 ### Melihat konfigurasi yang tadi sebelumnya pernah dibuat
 ```
