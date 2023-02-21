@@ -20,11 +20,11 @@ $ yum -y install ansible
 $ pip install ansible
 ```
 ----
+----
 ### Check version
 ```
 $ ansible --version
 ```
-----
 ----
 ```
 ansible [core 2.12.10]
