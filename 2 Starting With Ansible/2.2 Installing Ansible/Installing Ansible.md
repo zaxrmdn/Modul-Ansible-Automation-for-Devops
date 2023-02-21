@@ -1,24 +1,30 @@
 # Installing Ansible
 ---
-## Installing on Debian/Ubuntu
+```
+
+
+
+```
+---
+### Installing on Debian/Ubuntu
 ```
 $ apt-add-repository -y ppa:ansible/ansible
 $ apt update
 $ apt install -y ansible
 ```
 ---
-## Installing on RHEL/Centos
+### Installing on RHEL/Centos
 ```
 $ yum install -y epel-release
 $ yum install -y ansible
 ```
 ---
-## Installing on pip
+### Installing on pip
 ```
 pip install ansible
 ```
 ---
-## Check version ansible
+### Check version ansible
 ```
 $ ansible --version
 ```
@@ -40,7 +46,7 @@ ansible [core 2.12.10]
 
 
 ----
-## Issues
+### Issues
 > if you encounter problems during the installation process you might see the following
 > Issue on ubuntu cannot install ansible lock prosses 
 ```
