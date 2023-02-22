@@ -1,6 +1,5 @@
 # Configuring basic inventory
 ---
----
 ### Edit the file in the ansible configuration directory
 ```
 $ vim /etc/ansible/hosts

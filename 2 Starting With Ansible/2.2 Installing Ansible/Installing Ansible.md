@@ -1,6 +1,5 @@
 # Installing Ansible
 ---
----
 ### Installing on Debian/Ubuntu
 ```
 $ apt-add-repository -y ppa:ansible/ansible
@@ -35,7 +34,6 @@ ansible [core 2.12.10]
   jinja version = 2.10.1
   libyaml = True
 ```
----
 ---
 ### Issues
 > Jika kamu mengalami kendala saat proses installasi ini mungkin akan sedikit membantu mungkin
