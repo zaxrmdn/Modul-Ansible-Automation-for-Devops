@@ -3,11 +3,11 @@
 10.23.1.14
 10.23.1.69
 
-[server-ubuntu1]
+[ubuntu1]
 10.23.1.15
 
-[server-ubuntu2]
+[ubuntu2]
 10.23.1.14
 
-[server-centos]
+[centos]
 10.23.1.69
