@@ -1,0 +1,49 @@
+# Managing Single Server
+---
+|
+|
+---
+### Discover host target
+```
+$ ansible centos -a "hostnamectl" -u centos -k
+```
+---
+```
+root@controller:~# ansible centos -a "hostnamectl" -u centos -k
+SSH password:
+10.23.1.69 | CHANGED | rc=0 >>
+   Static hostname: target3
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: addea7717f5b4397951c6521bdee33be
+           Boot ID: 2f409fd82ea54643b66d42c699ba7160
+    Virtualization: vmware
+  Operating System: CentOS Stream 8
+       CPE OS Name: cpe:/o:centos:centos:8
+            Kernel: Linux 4.18.0-408.el8.x86_64
+      Architecture: x86-64
+```
+### Discover time target
+```
+$ ansible centos -a "timedatectl" -u centos -k
+```
+---
+```
+root@controller:~# ansible centos -a "timedatectl" -u centos -k
+SSH password:
+10.23.1.69 | CHANGED | rc=0 >>
+               Local time: Wed 2023-02-22 15:13:51 WIB
+           Universal time: Wed 2023-02-22 08:13:51 UTC
+                 RTC time: Wed 2023-02-22 08:13:53
+                Time zone: Asia/Jakarta (WIB, +0700)
+System clock synchronized: no
+              NTP service: n/a
+          RTC in local TZ: no
+```
+---
+### Monitoring using ansible
+### See memori size
+```
+$ ansible centos -a "free -h" -u centos -k
+```
+### See 
