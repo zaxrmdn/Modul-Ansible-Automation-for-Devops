@@ -37,7 +37,7 @@ ansible [core 2.12.10]
 ---
 ### Issues
 > Jika kamu mengalami kendala saat proses installasi ini mungkin akan sedikit membantu mungkin
-> Isu ubuntu lock proses installation ansible
+#### Isu ubuntu lock proses installation ansible
 ```
 $ rm -r /var/lib/dpkg/lock-frontend
 $ rm -r /var/lib/dpkg/lock
