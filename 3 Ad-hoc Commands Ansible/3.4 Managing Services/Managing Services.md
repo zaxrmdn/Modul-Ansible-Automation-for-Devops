@@ -34,7 +34,7 @@ $ ansible centos -m service -a "name=httpd state=started" -u root -k
 ---
 #### Check status service using command systemd
 ```
-$ ansible centos -a "systemctl status apache2" -u root -k
+$ ansible centos -a "systemctl status httpd" -u root -k
 ```
 ---
 #### Stop Service
