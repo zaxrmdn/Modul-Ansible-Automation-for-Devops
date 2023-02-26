@@ -6,6 +6,10 @@
 $ ansible ubuntu -m service -a "name=apache2 state=started" -u root -k
 ```
 ---
+#### Check Status Service using command systemd
+```
+$ ansible ubuntu -a "systemctl status apache2" -u root -k
+```
 #### Stop Service
 ```
 $ ansible ubuntu -m service -a "name=apache2 state=stopped" -u root -k
@@ -26,6 +30,11 @@ $ ansible ubuntu -m service -a "name=apache2 state=reloaded" -u root -k
 #### Start Service
 ```
 $ ansible centos -m service -a "name=httpd state=started" -u root -k
+```
+---
+#### Check status service using command systemd
+```
+$ ansible centos -a "systemctl status apache2" -u root -k
 ```
 ---
 #### Stop Service
