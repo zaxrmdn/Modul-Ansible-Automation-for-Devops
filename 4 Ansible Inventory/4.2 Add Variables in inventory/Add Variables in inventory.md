@@ -2,7 +2,7 @@
 <br><br>
 ### Edit files host in /etc/ansible/hosts
 ```
-vim /etc/ansible/hosts
+$ vim /etc/ansible/hosts
 ```
 > Kamu bisa lihat contoh File konfigurasinya ada disini [hosts](./hosts)
 ---
@@ -36,6 +36,11 @@ root@controller:~# ansible all -m ping
     "changed": false,
     "ping": "pong"
 }}
+```
+---
+### Edit files host in /etc/ansible/hosts
+```
+$ vim /etc/ansible/hosts
 ```
 ---
 ### Adding variables parameter user and password ssh ubuntu in files inventory
