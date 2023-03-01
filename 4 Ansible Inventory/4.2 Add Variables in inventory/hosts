@@ -1,0 +1,24 @@
+# Add at first line and define the host
+10.23.1.15 
+10.23.1.14
+10.23.1.69
+
+[ubuntu]
+10.23.1.15
+10.23.1.14
+
+[ubuntu1]
+10.23.1.15
+
+[ubuntu2]
+10.23.1.14
+
+# Add parameter this to define authentication
+[centos]
+10.23.1.69 ansible_connection=ssh ansible_user=root ansible_ssh_pass=123
+
+# Add vars this to define authentication
+[ubuntu:vars]
+ansible_connection=ssh
+ansible_user=root
+ansible_ssh_pass=123
