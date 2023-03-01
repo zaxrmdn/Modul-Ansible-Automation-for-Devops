@@ -4,7 +4,7 @@
 ```
 vim /etc/ansible/hosts
 ```
-> Kamu bisa lihatc contoh File konfigurasinya ada disini [hosts](./hosts)
+> Kamu bisa lihat contoh File konfigurasinya ada disini [hosts](./hosts)
 ---
 ### Adding parameter user and password ssh in files inventory
 ```
