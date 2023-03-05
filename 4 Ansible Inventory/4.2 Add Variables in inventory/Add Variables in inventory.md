@@ -17,14 +17,14 @@ $ vim /etc/ansible/hosts
 $ ansible all -m ping
 ```
 ---
-
-_root@controller:~# ansible all -m ping
+```
+root@controller:~# ansible all -m ping
 10.23.1.15 | UNREACHABLE! => {
     "changed": false,
     "msg": "Failed to connect to the host via ssh: root@10.23.1.15: Permission denied (publickey,password).",
     "unreachable": true
-}_
-**10.23.1.14 | UNREACHABLE! => {
+}
+10.23.1.14 | UNREACHABLE! => {
     "changed": false,
     "msg": "Failed to connect to the host via ssh: root@10.23.1.14: Permission denied (publickey,password).",
     "unreachable": true
@@ -36,7 +36,7 @@ _root@controller:~# ansible all -m ping
     "changed": false,
     "ping": "pong"
 }}
-**
+```
 ---
 ### Edit files host in /etc/ansible/hosts
 ```
