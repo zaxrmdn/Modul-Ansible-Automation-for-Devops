@@ -69,4 +69,91 @@ $ vim /etc/netplan/00-installer-config.yaml
 ```
 > contoh konfigurasi file netplan ada disini [00-installer-config.yml](./z00-installer-config.yml)
 ---
-##### 
+##### See default profile
+```
+$ lxc profile list
+```
+---
+```
+$ lxc profile list
++---------+---------+
+|  NAME   | USED BY |
++---------+---------+
+| default | 0       |
++---------+---------+
+```
+---
+##### Create new profile
+```
+$ lxc profile create brexternal
+```
+##### Edit profile for interface bridge
+```
+EDITOR=vim lxc profile edit brexternal  
+```
+---
+> Sesuaikan seperti pada bawah ini
+```
+config: {}
+description: Agar container dapat di akses dari jaringan luar
+devices:
+  eth0:
+    name: eth0
+    nictype: bridged
+    parent: br0
+    type: nic
+name: extbridge
+used_by: []
+```
+---
+##### Create target machine with network from bridge interface external
+```
+$ lxc launch -p default -p brexternal images:ubuntu/focal target1
+```
+---
+#### Creating target machine
+```
+$ lxc launch images:ubuntu/focal target1
+```
+---
+#### See container or vm
+```
+$ lxc list
+```
+---
+```
+root@ubuntu-host:~# lxc list
++---------+---------+------------------+------+-----------+-----------+
+|  NAME   |  STATE  |       IPV4       | IPV6 |   TYPE    | SNAPSHOTS |
++---------+---------+------------------+------+-----------+-----------+
+| target1 | RUNNING | 10.23.1.6 (eth0) |      | CONTAINER | 0         |
++---------+---------+------------------+------+-----------+-----------+
+| target2 | RUNNING | 10.23.1.5 (eth0) |      | CONTAINER | 0         |
++---------+---------+------------------+------+-----------+-----------+
+| target3 | RUNNING | 10.23.1.4 (eth0) |      | CONTAINER | 0         |
++---------+---------+------------------+------+-----------+-----------+
+| target4 | RUNNING | 10.23.1.3 (eth0) |      | CONTAINER | 0         |
++---------+---------+------------------+------+-----------+-----------+
+```
+---
+#### Login console to target machine
+```
+$ lxc exec target1 /bin/bash
+```
+---
+#### Installing openssh server to target machine ubuntu
+```
+root@target1:~# apt install openssh-server -y
+```
+##### Edit file /etc/ssh/sshd_config ubuntu at line 34 change permit root login sshd then restart
+```
+PermitRootLogin yes
+
+root@target1:~# systemctl restart sshd
+```
+> Untuk keluar dari console ketik exit saja
+---
+#### Installing openssh server to target machine centos
+```
+
+```
