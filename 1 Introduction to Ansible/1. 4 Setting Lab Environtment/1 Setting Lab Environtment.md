@@ -17,7 +17,6 @@ $ apt install lxd
 > Jika muncul pop up, tekan enter - enter saja
 ---
 
-#### Checking version lxc
 #### Initial lxd and making new the storage pool
 ```
 $ lxd init
@@ -43,6 +42,7 @@ Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]: n
 ---
 #### (Optional) Bridging network internal container with external network
 > Jika kamu ingin target machine mendapatkan segmen ip yang sama dengan yang kamu dapatkan saat ini, kamu bisa mengatur interface bridge untuk target machine
+---
 > following this step
 ---
 ##### Install bridge utils
