@@ -1,11 +1,11 @@
 # Creating Custome Inventory
 <br><br>
-### Create the direktori in /opt
+### Create the direktory in /opt
 ```
 $ mkdir /opt/ansible
 ```
 ---
-### Go to directori ansible
+### Go to directory ansible
 ```
 $ cd /opt/ansible
 ```
