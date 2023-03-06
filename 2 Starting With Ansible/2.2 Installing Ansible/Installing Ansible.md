@@ -46,4 +46,3 @@ $ apt update
 ```
 
 > Kamu bisa menghubungiku jika ada kendala lainnya
-
