@@ -8,34 +8,25 @@ $ vim /etc/ansible/hosts
 ---
 ### Adding parameter user and password ssh in files inventory
 ```
-[centos] 10.23.1.69 ansible_connection=ssh ansible_user=root ansible_ssh_pass=123
+[centos] 
+10.23.1.6 ansible_connection=ssh ansible_user=root ansible_ssh_pass=root
  
 ```
 ---
 ### Try ping 
 ```
-$ ansible all -m ping
+$ ansible target -m ping
 ```
 ---
 ```
-root@controller:~# ansible all -m ping
-10.23.1.15 | UNREACHABLE! => {
-    "changed": false,
-    "msg": "Failed to connect to the host via ssh: root@10.23.1.15: Permission denied (publickey,password).",
-    "unreachable": true
-}
-10.23.1.14 | UNREACHABLE! => {
-    "changed": false,
-    "msg": "Failed to connect to the host via ssh: root@10.23.1.14: Permission denied (publickey,password).",
-    "unreachable": true
-}
-10.23.1.69 | SUCCESS => {
+root@ubuntu-host:~# ansible target1 -m ping
+10.23.1.6 | SUCCESS => {
     "ansible_facts": {
-        "discovered_interpreter_python": "/usr/libexec/platform-python"
+        "discovered_interpreter_python": "/usr/bin/python3"
     },
     "changed": false,
     "ping": "pong"
-}}
+}
 ```
 ---
 ### Edit files host in /etc/ansible/hosts
@@ -48,7 +39,7 @@ $ vim /etc/ansible/hosts
 [ubuntu:vars]
 ansible_connection=ssh
 ansible_user=root
-ansible_ssh_pass=123
+ansible_ssh_pass=root
 ```
 ---
 ### Trying ping 
@@ -57,22 +48,25 @@ $ ansible all -m ping
 ```
 ---
 ```
-root@controller:~# ansible all -m ping
-10.23.1.69 | SUCCESS => {
-    "ansible_facts": {
-        "discovered_interpreter_python": "/usr/libexec/platform-python"
-    },
+root@ubuntu-host:~# ansible all -m ping
+10.23.1.4 | UNREACHABLE! => {
     "changed": false,
-    "ping": "pong"
+    "msg": "Failed to connect to the host via ssh: root@10.23.1.4: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).",
+    "unreachable": true
 }
-10.23.1.15 | SUCCESS => {
+10.23.1.3 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: root@10.23.1.3: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).",
+    "unreachable": true
+}
+10.23.1.6 | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python3"
     },
     "changed": false,
     "ping": "pong"
 }
-10.23.1.14 | SUCCESS => {
+10.23.1.5 | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python3"
     },

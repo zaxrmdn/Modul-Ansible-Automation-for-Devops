@@ -3,7 +3,7 @@
 ### Managing Files
 #### Get information about file
 ```
-$ ansible centos -m stat -a "path=/bin/bash" -u root -k
+$ ansible centos -m stat -a "path=/bin/bash" -k
 ```
 ---
 ```
@@ -53,7 +53,7 @@ $ ansible centos -m stat -a "path=/bin/bash" -u root -k
 ---
 #### Copy files
 ```
-$ ansible all -m copy -a "src=/etc/hosts dest=/tmp/hosts" -u root -k
+$ ansible all -m copy -a "src=/etc/hosts dest=/tmp/hosts" -k
 ```
 ---
 ```
@@ -100,31 +100,58 @@ root@controller:~# ansible all -m copy -a "src=/etc/hosts dest=/tmp/hosts" -u ro
 }
 ```
 ---
+#### Checking files 
+```
+root@ubuntu-host:~# ansible all -a " ls /tmp/ " -k | grep hosts
+SSH password:
+hosts
+hosts
+hosts
+hosts
+```
+---
 #### Retrieve files
 ```
-$ ansible centos -m fetch -a "src=/etc/os-release dest=/tmp" -u root -k
+$ ansible centos -m fetch -a "src=/etc/os-release dest=/tmp" -k
 ```
 ---
 ```
-root@controller:~# ansible centos -m fetch -a "src=/etc/os-release dest=/tmp" -u root -k
+root@ubuntu-host:~# ansible centos -m fetch -a "src=/etc/os-release dest=/tmp" -k
 SSH password:
-10.23.1.69 | SUCCESS => {
-    "changed": false,
-    "checksum": "2ea1139a36837703364dab22d0a4b1cc632b1248",
-    "dest": "/tmp/10.23.1.69/etc/os-release",
-    "file": "/etc/os-release",
-    "md5sum": "e9bbb0b9534080054a8e2c266695a997"
+10.23.1.4 | CHANGED => {
+    "changed": true,
+    "checksum": "c093c25814ca254ccb3ce594c37715acfd2abd71",
+    "dest": "/tmp/10.23.1.4/etc/os-release",
+    "md5sum": "6038e70c459d5f53686e47be9c6c8781",
+    "remote_checksum": "c093c25814ca254ccb3ce594c37715acfd2abd71",
+    "remote_md5sum": null
+}
+10.23.1.3 | CHANGED => {
+    "changed": true,
+    "checksum": "c093c25814ca254ccb3ce594c37715acfd2abd71",
+    "dest": "/tmp/10.23.1.3/etc/os-release",
+    "md5sum": "6038e70c459d5f53686e47be9c6c8781",
+    "remote_checksum": "c093c25814ca254ccb3ce594c37715acfd2abd71",
+    "remote_md5sum": null
 }
 ```
 ---
+#### Checking Retrive files in machine controller
+```
+cat /tmp/10.23.1.3/etc/os-release
+```
 ### Managing Direktories
 #### Create a Direktories
 ```
-$ ansible all -m file -a "dest=/tmp/testdir mode=644 state=directory" -u root -k 
+$ ansible all -m file -a "dest=/tmp/testdir mode=644 state=directory" -k 
 ```
 ---
 ```
-root@controller:~# ansible all -m file -a "dest=/tmp/testdir mode=644 state=directory" -u root -k                            SSH password:                                                                                                                10.23.1.69 | CHANGED => {                                                                                                        "ansible_facts": {                                                                                                               "discovered_interpreter_python": "/usr/libexec/platform-python"
+root@ubuntu-host:~# ansible all -m file -a "dest=/tmp/testdir mode=644 state=directory" -k
+SSH password:
+10.23.1.3 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
     },
     "changed": true,
     "gid": 0,
@@ -132,12 +159,11 @@ root@controller:~# ansible all -m file -a "dest=/tmp/testdir mode=644 state=dire
     "mode": "0644",
     "owner": "root",
     "path": "/tmp/testdir",
-    "secontext": "unconfined_u:object_r:user_tmp_t:s0",
-    "size": 6,
+    "size": 2,
     "state": "directory",
     "uid": 0
 }
-10.23.1.15 | CHANGED => {
+10.23.1.5 | CHANGED => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python3"
     },
@@ -147,11 +173,11 @@ root@controller:~# ansible all -m file -a "dest=/tmp/testdir mode=644 state=dire
     "mode": "0644",
     "owner": "root",
     "path": "/tmp/testdir",
-    "size": 4096,
+    "size": 2,
     "state": "directory",
     "uid": 0
 }
-10.23.1.14 | CHANGED => {
+10.23.1.6 | CHANGED => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python3"
     },
@@ -161,31 +187,50 @@ root@controller:~# ansible all -m file -a "dest=/tmp/testdir mode=644 state=dire
     "mode": "0644",
     "owner": "root",
     "path": "/tmp/testdir",
-    "size": 4096,
+    "size": 2,
     "state": "directory",
     "uid": 0
 }
-
+10.23.1.4 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": true,
+    "gid": 0,
+    "group": "root",
+    "mode": "0644",
+    "owner": "root",
+    "path": "/tmp/testdir",
+    "size": 2,
+    "state": "directory",
+    "uid": 0
+}
 ```
 ---
 #### Creating symlink
 ```
-$ ansible all -m file -a "src=/tmp/hosts dest=/opt/symlink state=link" -u root -k
+$ ansible all -m file -a "src=/tmp/hosts dest=/opt/symlink state=link" -k
 ```
 ---
 ```
-root@controller:~# ansible all -m file -a "src=/tmp/hosts dest=/opt/symlink state=link" -u root -k                           SSH password:                                                                                                                10.23.1.69 | CHANGED => {                                                                                                        "ansible_facts": {                                                                                                               "discovered_interpreter_python": "/usr/libexec/platform-python"                                                          },                                                                                                                           "changed": true,                                                                                                             "dest": "/opt/symlink",
+root@ubuntu-host:~# ansible all -m file -a "src=/tmp/hosts dest=/opt/symlink state=link" -k
+SSH password:
+10.23.1.4 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": true,
+    "dest": "/opt/symlink",
     "gid": 0,
     "group": "root",
     "mode": "0777",
     "owner": "root",
-    "secontext": "unconfined_u:object_r:usr_t:s0",
     "size": 10,
     "src": "/tmp/hosts",
     "state": "link",
     "uid": 0
 }
-10.23.1.15 | CHANGED => {
+10.23.1.6 | CHANGED => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python3"
     },
@@ -200,9 +245,24 @@ root@controller:~# ansible all -m file -a "src=/tmp/hosts dest=/opt/symlink stat
     "state": "link",
     "uid": 0
 }
-10.23.1.14 | CHANGED => {
+10.23.1.5 | CHANGED => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": true,
+    "dest": "/opt/symlink",
+    "gid": 0,
+    "group": "root",
+    "mode": "0777",
+    "owner": "root",
+    "size": 10,
+    "src": "/tmp/hosts",
+    "state": "link",
+    "uid": 0
+}
+10.23.1.3 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
     },
     "changed": true,
     "dest": "/opt/symlink",
@@ -219,21 +279,21 @@ root@controller:~# ansible all -m file -a "src=/tmp/hosts dest=/opt/symlink stat
 ---
 #### Delete directory and files
 ```
-$ ansible all -m file -a "dest=/tmp/test state=absent" -u root -k
+$ ansible all -m file -a "dest=/tmp/test state=absent" -k
 ```
 ---
 ```
-root@controller:~# ansible all -m file -a "dest=/tmp/test state=absent" -u root -k
+root@ubuntu-host:~# ansible all -m file -a "dest=/tmp/test state=absent" -u root -k
 SSH password:
-10.23.1.69 | SUCCESS => {
+10.23.1.3 | SUCCESS => {
     "ansible_facts": {
-        "discovered_interpreter_python": "/usr/libexec/platform-python"
+        "discovered_interpreter_python": "/usr/bin/python"
     },
     "changed": false,
     "path": "/tmp/test",
     "state": "absent"
 }
-10.23.1.15 | SUCCESS => {
+10.23.1.6 | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python3"
     },
@@ -241,9 +301,17 @@ SSH password:
     "path": "/tmp/test",
     "state": "absent"
 }
-10.23.1.14 | SUCCESS => {
+10.23.1.5 | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "path": "/tmp/test",
+    "state": "absent"
+}
+10.23.1.4 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
     },
     "changed": false,
     "path": "/tmp/test",
