@@ -3,12 +3,12 @@
 ### Install packages
 #### Install web server on ubuntu using apt modules
 ```
-$ ansible ubuntu -m apt -a "name=apache2 state=present " -u root -k
+$ ansible ubuntu -m apt -a "name=apache2 state=present " -k
 ```
 ---
 #### Install web server on centos using yum modules
 ```
-$ ansible centos -m yum -a "name=httpd state=present" -u root -k
+$ ansible centos -m yum -a "name=httpd state=present" -k
 ``` 
 ---
 ### Uninstall packages
