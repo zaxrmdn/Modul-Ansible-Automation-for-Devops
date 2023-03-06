@@ -141,9 +141,23 @@ root@ubuntu-host:~# lxc list
 $ lxc exec target1 /bin/bash
 ```
 ---
+#### Create Password for root
+```
+root@target1:~# passwd
+New password:
+Retype new password:
+passwd: password updated successfully
+```
+> Lakukan ini ke semua target machine
+---
 #### Installing openssh server to target machine ubuntu
 ```
 root@target1:~# apt install openssh-server -y
+```
+---
+#### Enable ssh for systemd
+```
+$ systemctl enable --now sshd
 ```
 ##### Edit file /etc/ssh/sshd_config ubuntu at line 34 change permit root login sshd then restart
 ```
@@ -155,5 +169,22 @@ root@target1:~# systemctl restart sshd
 ---
 #### Installing openssh server to target machine centos
 ```
-
+[root@target3 ~]# yum install openssh-server -y
 ```
+> Secara default di centos kita tidak perlu mengubah permit root login di konfigurasi ssh, maka kita dapat login lewat di menggunakan user root
+---
+#### Enable ssh for systemd
+```
+$ systemctl enable --now sshd
+```
+#### Trying ssh from ansible controller machine
+```
+root@ubuntu-host:~# ssh -l root 10.23.1.3
+The authenticity of host '10.23.1.3 (10.23.1.3)' can't be established.
+ECDSA key fingerprint is SHA256:Smi5D+oxZApwKTgw0k6/pBF7yYxS87zKXHjIpVkWKe0.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.23.1.3' (ECDSA) to the list of known hosts.
+root@10.23.1.3's password:
+[root@target4 ~]#
+```
+---
