@@ -1,6 +1,6 @@
 ---
   - name: authorized ssh
-    hosts: all
+    hosts: all-machine
     tasks:
     - name: Install key ...
       authorized_key:
