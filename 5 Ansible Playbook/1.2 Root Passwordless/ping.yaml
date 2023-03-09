@@ -1,0 +1,8 @@
+---
+  - name: ping test
+    hosts: all-machine
+
+    tasks:
+      - name: ping hosts
+        ping:
+    
