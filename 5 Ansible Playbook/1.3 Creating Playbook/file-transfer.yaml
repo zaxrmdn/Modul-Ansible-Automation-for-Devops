@@ -1,0 +1,23 @@
+---
+  - hosts: all
+    tasks:
+      - name: Copy file ke centos 1
+        copy:
+          src: ~/centos1.txt
+          dest: ~/
+          owner: root
+          group: root
+          mode: 0777
+        when:
+          - ansible_distribution == "CentOS"
+          - ansible_distribution_major_version == '7'
+          - name: Copy file ke centos 1
+        copy:
+          src: ~/centos2.txt
+          dest: ~/
+          owner: root
+          group: root
+          mode: 0777
+        when:
+          - ansible_distribution == "CentOS"
+          - ansible_distribution_major_version == '7'
