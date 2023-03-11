@@ -1,0 +1,4 @@
+dnsserver: bind
+ftpserver: vsftpd
+servicedns: named
+serviceftp: vsftpd

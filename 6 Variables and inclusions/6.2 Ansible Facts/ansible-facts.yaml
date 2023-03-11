@@ -5,4 +5,4 @@
       - name: Menampilkan Hostname, OS dan IP Address
         debug:
           msg: >
-            Default IPv4 address dari {{ ansible_hostname }} dengan Operasi Sistem {{ ansible_os_family }} adalah {{ ansible_default_ipv4.address }}
+            Default IPv4 address dari {{ ansible_hostname }} dengan Operasi Sistem Family {{ ansible_os_family }} adalah {{ ansible_default_ipv4.address }}

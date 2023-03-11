@@ -673,16 +673,16 @@ ok: [10.23.1.4]
 
 TASK [Menampilkan Hostname, OS dan IP Address] *****************************************************************************************************
 ok: [10.23.1.6] => {
-    "msg": "Default IPv4 address dari target1 dengan Operasi Sistem Debian adalah 10.23.1.6\n"
+    "msg": "Default IPv4 address dari target1 dengan Operasi Sistem Family Debian adalah 10.23.1.6\n"
 }
 ok: [10.23.1.5] => {
-    "msg": "Default IPv4 address dari target2 dengan Operasi Sistem Debian adalah 10.23.1.5\n"
+    "msg": "Default IPv4 address dari target2 dengan Operasi Sistem Family Debian adalah 10.23.1.5\n"
 }
 ok: [10.23.1.4] => {
-    "msg": "Default IPv4 address dari target3 dengan Operasi Sistem RedHat adalah 10.23.1.4\n"
+    "msg": "Default IPv4 address dari target3 dengan Operasi Sistem Family RedHat adalah 10.23.1.4\n"
 }
 ok: [10.23.1.3] => {
-    "msg": "Default IPv4 address dari target4 dengan Operasi Sistem RedHat adalah 10.23.1.3\n"
+    "msg": "Default IPv4 address dari target4 dengan Operasi Sistem Family RedHat adalah 10.23.1.3\n"
 }
 
 PLAY RECAP *****************************************************************************************************************************************

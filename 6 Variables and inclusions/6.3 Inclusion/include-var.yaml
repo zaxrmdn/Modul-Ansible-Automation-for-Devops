@@ -1,0 +1,23 @@
+---
+  - name: Lab Inclusions
+    hosts: centos
+    tasks:
+      - name: gather variables
+        include_vars:
+          file: var.yaml
+          name: varcentos
+
+      - name: Install dns server dan ftp server
+        yum:
+          name: "{{ item }}"
+          state: latest
+        with_items:
+           - "{{ varcentos.dnsserver }}"
+           - "{{ varcentos.ftpserver }}"
+      - name: Start dns server dan ftp server
+        service:
+          name: "{{ item }}"
+          state: started
+        with_items:
+           - "{{ varcentos.servicedns }}"
+           - "{{ varcentos.serviceftp }}"
