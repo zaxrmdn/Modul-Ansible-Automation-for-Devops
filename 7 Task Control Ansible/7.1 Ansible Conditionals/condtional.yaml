@@ -1,0 +1,22 @@
+---
+  - name: Lab Conditional
+    hosts: all-machine
+    tasks:
+      - name: Salin file ke Centos
+        copy:
+          src: ~/centos.txt
+          dest: ~/
+          owner: root
+          group: root
+          mode: 0777
+        when:
+          - ansible_distribution == "CentOS"
+      - name: Copy file ke Ubuntu
+        copy:
+          src: ~/ubuntu.txt
+          dest: ~/
+          owner: root
+          group: root
+          mode: 0777
+        when:
+          - ansible_distribution == "Ubuntu"
