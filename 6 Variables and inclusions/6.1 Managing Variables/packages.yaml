@@ -1,0 +1,11 @@
+---
+  - name: Install Packages
+    hosts: ubuntu
+    vars:
+      web_pkg: nginx
+    tasks:
+      - name: Install Web Server Nginx
+        apt:
+          name: "{{ web_pkg }}"
+          state: latest
+          update_cache: yes
