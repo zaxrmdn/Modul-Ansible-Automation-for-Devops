@@ -1,0 +1,16 @@
+---
+  - name: Lab Ansible Handlers
+    hosts: target2
+    tasks:
+      - name: copy index.html
+        copy:
+          src: ~/index.html
+          dest: "/var/www/html/index.html"
+        notify:
+          - reload apache2
+# Handler untuk reload apache2
+    handlers:
+      - name: reload apache2
+        service:
+          name: apache2
+          state: reloaded 
