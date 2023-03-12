@@ -1,0 +1,15 @@
+---
+  - name: Lab Loops Control
+    hosts: target1
+    tasks:
+      - name: Ansible jinja2 for loop statement
+        debug:
+          msg: >
+               --== Ansible Jinja2 for with break statement ==--
+
+               {% for nilai in range(10, 0, -1) %}
+                  {% if nilai == 5 %}
+                     {% break %}
+                  {% endif %}
+                  {{ nilai }}
+                {% endfor %}
