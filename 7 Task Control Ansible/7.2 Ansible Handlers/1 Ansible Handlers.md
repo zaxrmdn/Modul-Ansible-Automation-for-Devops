@@ -12,7 +12,7 @@ $ echo "<center><h1>Lab Ansible Handlers</h1></center>" > ~/index.html
 $ touch handlers.yaml
 $ vim handlers.yaml
 ```
-> Filenya ada disini [handlers.yaml]
+> Filenya ada disini [handlers.yaml](./handlers.yaml)
 ---
 #### Running the playbook with handlers is running
 ```
