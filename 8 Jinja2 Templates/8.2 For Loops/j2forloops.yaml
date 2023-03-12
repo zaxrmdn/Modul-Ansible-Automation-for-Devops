@@ -1,0 +1,11 @@
+---
+  - name: Lab Jinja2 Templates for loops
+    hosts: all-machine
+    tasks:
+      - name: Ansible Jinja2 for loop statement
+        debug:
+          msg: >
+                --== Ansible Jinja2 for statement ==--
+                {% for ip in ansible_all_ipv4_addresses -%}
+                   Daftar IP Address {{ loop.index }} = {{ ip }}
+                {% endfor %}

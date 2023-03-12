@@ -1,0 +1,15 @@
+---
+  - name: Lab Jinja2 Template if statement
+    hosts: all-machine
+    tasks:
+      - name: Messages host
+        debug:
+          msg: >
+               --== Ansible Jinja2 if elif else statement ==--
+              {% if ansible_hostname == "target1" %}
+                 Ini target1
+              {% elif ansible_hostname == "target2" %}
+                 Ini target2
+              {% else %}
+                 Ini bukan target1 dan target2 melainkan {{ ansible_hostname }}
+              {% endif %}
