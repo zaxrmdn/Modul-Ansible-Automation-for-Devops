@@ -40,7 +40,8 @@ ok: [10.23.1.3] => {
     "msg": "--== Ansible Jinja2 for statement ==--\n  Daftar IP Address 1 = 10.23.1.3\n"
 }
 
-PLAY RECAP *****************************************************************************************************************************************10.23.1.3                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+PLAY RECAP *****************************************************************************************************************************************
+10.23.1.3                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 10.23.1.4                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 10.23.1.5                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 10.23.1.6                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
