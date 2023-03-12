@@ -1,0 +1,25 @@
+---
+  - name: Lab loops
+    hosts: target1
+    tasks:
+      - name: Install dependencies
+        apt:
+          name: "{{ item }}"
+          state: latest
+        with_items:
+          - php 
+          - php-cgi
+          - php-mysqli
+          - php-pear
+          - php-mbstring
+          - libapache2-mod-php
+          - php-common
+          - php-phpseclib
+          - php-mysql
+
+      - name: Install the app 
+        apt:
+          name: "{{ item }}"
+        with_items:
+          - mariadb-server
+          - phpmyadmin
