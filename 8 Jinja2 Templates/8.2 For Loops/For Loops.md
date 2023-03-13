@@ -8,7 +8,7 @@ $ vim j2loops.yaml
 ```
 ---
 #### Add jinja2 templates for loops to the file playbook
-> filenya ada disini [j2loops.yaml](./j2loops.yaml)
+> filenya ada disini [j2forloops.yaml](./j2forloops.yaml)
 ---
 #### Running the playbook
 ```
