@@ -1,0 +1,9 @@
+---
+  - name: Example playbook
+    hosts: all
+    tasks:
+      - name: Convert string to uppercase
+        debug:
+          msg: "{{ my_string | upper }}"
+        vars:
+          my_string: "hello world"
