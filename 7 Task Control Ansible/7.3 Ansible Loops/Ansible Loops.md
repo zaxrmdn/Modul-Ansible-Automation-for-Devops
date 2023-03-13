@@ -7,7 +7,7 @@ $ vim loops.yaml
 ```
 > Filenya ada disini [loops.yaml](./loops.yaml)
 ---
-### Runnig the playbook
+### Running the playbook
 ```
 $ ansible -i inventory loops.yaml
 ```
