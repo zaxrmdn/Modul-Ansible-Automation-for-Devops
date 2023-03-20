@@ -1,0 +1,5 @@
+---
+  - name: Lab include
+    hosts: ubuntu
+    tasks:
+      - include_tasks: job.yaml

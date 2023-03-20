@@ -1,0 +1,7 @@
+---
+  - name: ping ke ubuntu
+    ping:
+
+  - name: update repository ubuntu
+    apt:
+      update_cache: yes

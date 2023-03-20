@@ -1,0 +1,5 @@
+---
+  - name: Lab imports
+    hosts: ubuntu
+    tasks:
+      - import_tasks: job.yaml
