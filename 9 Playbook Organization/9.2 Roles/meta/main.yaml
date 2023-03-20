@@ -1,0 +1,5 @@
+---
+dependencies:
+  - { role: common }
+author: IDN
+description: Install Apache on target hosts.

@@ -1,0 +1,5 @@
+---
+  - name: Install Apache on target hosts
+    hosts: webservers
+    roles:
+      - apache
