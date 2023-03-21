@@ -1,0 +1,5 @@
+---
+  - name: Lab verbose tool
+    hosts: ubuntu
+    tasks:
+      - action: shell echo "Halo Dunia"

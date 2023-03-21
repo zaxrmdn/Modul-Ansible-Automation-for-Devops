@@ -1,5 +1,14 @@
 ---
-  - name: Install Apache
+  - name: Install nginx
     apt:
-      name: apache2
+      name: nginx
       state: present
+
+  - name:
+    shell:
+      cmd: echo "<h1><center> Sedang belajar roles di ansible </h1></center>" > /var/www/html/index.html
+
+  - name: Restart nginx
+    service:
+      name: nginx
+      state: restarted

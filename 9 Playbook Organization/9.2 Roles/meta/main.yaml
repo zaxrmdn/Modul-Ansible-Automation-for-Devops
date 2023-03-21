@@ -1,5 +1,8 @@
----
-dependencies:
-  - { role: common }
-author: IDN
-description: Install Apache on target hosts.
+galaxy_info:
+  author: IDN
+  description: Install nginx and change content on target hosts.
+  min_ansible_version: 2.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal

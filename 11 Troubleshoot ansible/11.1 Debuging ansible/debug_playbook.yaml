@@ -1,0 +1,9 @@
+---
+  - name: Lab debug module
+    hosts: centos
+    tasks:
+      - shell: /usr/bin/uptime
+        register: debug_var
+      - name: Output debug
+        debug: var=debug_var
+        

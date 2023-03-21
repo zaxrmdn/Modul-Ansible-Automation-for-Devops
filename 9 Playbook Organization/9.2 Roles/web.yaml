@@ -1,5 +1,5 @@
 ---
-  - name: Install Apache on target hosts
-    hosts: webservers
+  - name: Install nginx and change content on target hosts
+    hosts: target2
     roles:
-      - apache
+      - web-nginx

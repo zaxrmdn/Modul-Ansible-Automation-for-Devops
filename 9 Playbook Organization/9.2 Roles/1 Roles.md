@@ -6,20 +6,20 @@ $ mkdir roles
 $ cd roles
 ```
 ---
-### Create roles web-apache2
+### Create roles web-nginx
 ```
-$ mkdir web-apache2
+$ mkdir web-nginx
 ```
 ---
-### Create directory tasks in the apache2 folder
+### Create directory tasks in the web-nginx folder
 ```
-4 mkdir web-apache2/tasks
+$ mkdir web-nginx/tasks
 ```
 ---
 ### Create the file yaml in tasks
 ```
-$ touch web-apache2/tasks/main.yaml
-$ vim web-apache2/tasks/main.yaml
+$ touch web-nginx/tasks/main.yaml
+$ vim web-nginx/tasks/main.yaml
 ```
 ---
 ### Add script to main.yaml
@@ -27,12 +27,12 @@ $ vim web-apache2/tasks/main.yaml
 ---
 ### Create the direktory meta
 ```
-$ mkdir meta in the web-apache2 folder
+$ mkdir meta in the web-nginx folder
 ```
 ### Create the file main yaml in the meta directory
 ```
-$ touch web-apache2/meta/main.yaml
-$ vim web-apache2/meta/main.yaml
+$ touch web-nginx/meta/main.yaml
+$ vim web-nginx/meta/main.yaml
 ```
 ### Add the script in the meta yaml
 > Filesnya ada disini [meta/main.yaml](./meta/main.yaml)
@@ -45,16 +45,40 @@ $ touch web.yaml
 ### Add script like this below
 > Filenya ada disini [web.yaml](./web.yaml)
 ---
-### Create custome inventory target1
+### Create custome inventory target2
 ```
-$ touch target1
-$ vim target1
+$ touch target2
+$ vim target2
 ```
 ---
 ### Add script below to target1
 ```
-[target1]
-10.23.1.6
+[target2]
+10.23.1.5
 ```
 ---
-### 
+### Trying running playbook web
+```
+$ ansible-playbook -i target2 web.yaml
+```
+---
+```
+root@ubuntu-host:~/roles# ansible-playbook -i target2 web.yaml
+
+PLAY [Install nginx and change content on target hosts] ****************************************************************
+TASK [Gathering Facts] *************************************************************************************************
+ok: [10.23.1.5]
+
+TASK [web-nginx : Install nginx] ***************************************************************************************
+ok: [10.23.1.5]
+
+TASK [web-nginx : shell] ***********************************************************************************************
+changed: [10.23.1.5]
+
+TASK [web-nginx : Restart nginx] ***************************************************************************************
+changed: [10.23.1.5]
+
+PLAY RECAP *************************************************************************************************************
+10.23.1.5                  : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+```

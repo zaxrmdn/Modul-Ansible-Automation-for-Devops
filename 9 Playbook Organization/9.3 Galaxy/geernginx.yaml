@@ -1,0 +1,5 @@
+---
+  - name: Configure web server with nginx
+    hosts: target1
+    roles:
+      - geerlingguy.nginx
