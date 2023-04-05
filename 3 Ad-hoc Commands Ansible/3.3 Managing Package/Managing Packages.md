@@ -19,13 +19,13 @@ $ ansible ubuntu -m apt -a "name=apache2 state=absent" -k
 ---
 #### Uninstall web server on centos using yum modules
 ```
-$ ansible centos -m apt -a "name=httpd state=absent" -k
+$ ansible centos -m yum -a "name=httpd state=absent" -k
 ```
 ---
 ### Update repository packages
 #### Update repository packages on ubuntu
 ```
-$ ansible ubuntu -m apt -a "update_cache: yes"
+$ ansible ubuntu -m apt -a "update_cache=yes" -k
 ```
 ---
 ####  update repository packages + install web server latest and on centos
